@@ -59,7 +59,7 @@ public class PriorityQueueDemo {
      */
     public void upAdjust() {
         int childIndex = size - 1;
-        int parentIndex = childIndex >> 1;
+        int parentIndex = (childIndex - 1) / 2;
         int temp = array[childIndex];
         /**
          * 子节点大于父节点
@@ -67,7 +67,7 @@ public class PriorityQueueDemo {
         while (array[childIndex] > array[parentIndex]) {
             array[childIndex] = array[parentIndex];
             childIndex = parentIndex;
-            parentIndex = parentIndex >> 1;
+            parentIndex = (parentIndex - 1) / 2;
         }
         array[childIndex] = temp;
     }
@@ -80,7 +80,7 @@ public class PriorityQueueDemo {
         /**
          * 获得要下沉的子节点下标
          */
-        int childIndex = parnentIndex << 1 + 1;
+        int childIndex = parnentIndex * 2 + 1;
         int temp = array[parnentIndex];
         /**
          *childIndex未达到越界
@@ -97,17 +97,18 @@ public class PriorityQueueDemo {
             }
             array[parnentIndex] = array[childIndex];
             parnentIndex = childIndex;
-            childIndex = childIndex << 1 + 1;
+            childIndex = childIndex * 2 + 1;
         }
         array[parnentIndex] = temp;
     }
+
     public static void main(String[] args) {
         PriorityQueueDemo priorityQueueDemo = new PriorityQueueDemo();
         priorityQueueDemo.enQueue(3);
         priorityQueueDemo.enQueue(11);
-        priorityQueueDemo.enQueue(7);
+        priorityQueueDemo.enQueue(12);
         priorityQueueDemo.enQueue(2);
-        priorityQueueDemo.enQueue(1);
+        priorityQueueDemo.enQueue(9);
 
         System.out.println(priorityQueueDemo.deQueue());
 
