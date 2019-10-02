@@ -1,11 +1,16 @@
 package com.ac.test;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 /**
  * RecursionDeom
  *
  * @author <a href="mailto:yanghui@pingtiao.com">yanghui</a>
  * @since 2019-08-23
  */
+@Data
 public class RecursionDemo {
     boolean flag = true;
     static int count = 0;
