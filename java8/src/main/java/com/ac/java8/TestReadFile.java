@@ -11,6 +11,21 @@ import java.io.InputStream;
 public class TestReadFile {
 
     public static void main(String[] args) {
-        InputStream resourceAsStream = TestReadFile.class.getResourceAsStream("data.txt");
+//        InputStream resourceAsStream = TestReadFile.class.getResourceAsStream("data.txt");
+//        Integer integer = Integer.valueOf(1991);
+        Integer integer = new Integer(1222);
+        doAccumate(integer);
+        System.out.println(integer);
+        String str = "world";
+        doAccumate(str);
+        System.out.println(str);
+    }
+
+    private static void doAccumate(Integer integer) {
+        integer++;
+    }
+
+    private static void doAccumate(String s) {
+        s += "hello";
     }
 }

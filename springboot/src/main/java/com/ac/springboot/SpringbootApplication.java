@@ -1,12 +1,9 @@
 package com.ac.springboot;
 
-import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.context.WebServerApplicationContext;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.web.context.WebServerInitializedEvent;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.event.EventListener;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
@@ -16,14 +13,19 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
+//@Component
 public class SpringbootApplication {
 
     public static void main(String[] args) {
+
+
         SpringApplication.run(SpringbootApplication.class, args);
+
+//        SpringApplication.run(WebConfiguration.class, args);
     }
 
-    @Bean
+    //    @Bean
     public RouterFunction<ServerResponse> helloword() {
         return route(GET("/helloworld"),
                 request -> ok().body(Mono.just("helloworld"), String.class));
@@ -55,4 +57,6 @@ public class SpringbootApplication {
         System.out.println("当前webserver的实现类为：" + event.getWebServer().getClass().getName());
 
     }
+
+
 }

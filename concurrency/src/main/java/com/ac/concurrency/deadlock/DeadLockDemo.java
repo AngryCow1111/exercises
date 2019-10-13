@@ -1,7 +1,5 @@
 package com.ac.concurrency.deadlock;
 
-import java.util.concurrent.TimeUnit;
-
 /**
  * DeadLockDemo
  *
@@ -18,11 +16,6 @@ public class DeadLockDemo {
         new Thread(() -> {
             synchronized (lockA) {
                 System.out.println("当前获得：" + lockA);
-                try {
-                    TimeUnit.SECONDS.sleep(1);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
                 synchronized (lockB) {
                     System.out.println("当前获得：" + lockB);
                 }
@@ -32,14 +25,9 @@ public class DeadLockDemo {
 
         new Thread(() -> {
             synchronized (lockB) {
-                System.out.println("当前获得：" + lockB);
-                try {
-                    TimeUnit.SECONDS.sleep(1);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                System.out.println("当前获得：" + lockA);
                 synchronized (lockA) {
-                    System.out.println("当前获得：" + lockA);
+                    System.out.println("当前获得：" + lockB);
                 }
             }
 

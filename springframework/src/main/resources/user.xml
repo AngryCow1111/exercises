@@ -7,12 +7,11 @@
         <property name="username" value="zhangsan"></property>
     </bean>
     <bean id="minstrel" class="com.ac.springframework.entity.Minstrel">
-
     </bean>
-    <aop:config>
-        <aop:aspect>
-            <aop:pointcut id="" expression="execution(* *.*(..))"/>
-            <aop:around method=""></aop:around>
-        </aop:aspect>
-    </aop:config>
+    <!--    <aop:config>-->
+    <!--        <aop:aspect>-->
+    <!--            <aop:pointcut id="" expression="execution(* *.*(..))"/>-->
+    <!--            <aop:around method=""></aop:around>-->
+    <!--        </aop:aspect>-->
+    <!--    </aop:config>-->
 </beans>

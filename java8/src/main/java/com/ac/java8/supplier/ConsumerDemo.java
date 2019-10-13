@@ -14,6 +14,10 @@ public class ConsumerDemo {
 
         Consumer<String> consumer = System.out::println;
         Consumer<String> consumer1 = ConsumerDemo::echo;
+        Consumer<String> stringConsumer = (String message) -> {
+            System.out.println(message);
+        };
+        stringConsumer.accept("111");
         consumer.andThen(consumer1)
                 .andThen(consumer)
                 .accept("hello word");
