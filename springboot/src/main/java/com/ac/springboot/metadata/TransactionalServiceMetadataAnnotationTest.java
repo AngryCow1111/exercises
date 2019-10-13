@@ -1,12 +1,12 @@
 package com.ac.springboot.metadata;
 
-import com.sun.tools.javac.util.ArrayUtils;
+//import com.sun.tools.javac.util.ArrayUtils;
 import org.springframework.core.type.AnnotationMetadata;
 import org.springframework.core.type.classreading.CachingMetadataReaderFactory;
 import org.springframework.core.type.classreading.MetadataReader;
 import org.springframework.core.type.classreading.MetadataReaderFactory;
 import org.springframework.util.CollectionUtils;
-import sun.jvm.hotspot.oops.Metadata;
+//import sun.jvm.hotspot.oops.Metadata;
 
 import java.io.IOException;
 import java.lang.annotation.Annotation;

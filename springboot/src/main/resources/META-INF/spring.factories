@@ -1,3 +1,6 @@
 # Auto Configure
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 com.ac.springboot.WebAutoConfiguration
+# Auto Configuration Import Listeners
+#org.springframework.boot.autoconfigure.AutoConfigurationImportListener=\
+#  com.ac.springboot.antoconfig.DefaultAutoConfigurationImportListener
