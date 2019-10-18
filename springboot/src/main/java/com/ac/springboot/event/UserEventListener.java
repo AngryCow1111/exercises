@@ -21,3 +21,5 @@ public class UserEventListener implements ApplicationListener<GenericEvent<User>
         System.out.println("onUserEvent" + event);
     }
 }
+
+
