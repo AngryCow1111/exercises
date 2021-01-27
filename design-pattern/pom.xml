@@ -46,6 +46,12 @@
             <artifactId>guava</artifactId>
             <version>28.0-jre</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-core -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-core</artifactId>
+            <version>4.5.12</version>
+        </dependency>
 
 
     </dependencies>
