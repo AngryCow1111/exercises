@@ -8,11 +8,11 @@ package com.ac.designpattern.adapter;
  */
 public class BeanFactory {
 
-    public static void doProccess(Processor processor) {
+    public static void doProcess(Processor processor) {
         System.out.println("------");
     }
 
     public static void main(String[] args) {
-        doProccess(new AdapterFilter(new Filter()));
+        doProcess(new AdapterFilter(new Filter()));
     }
 }
